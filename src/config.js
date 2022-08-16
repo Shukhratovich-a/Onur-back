@@ -2,7 +2,8 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const PORT = process.env.PORT || 5500;
-const HOST = process.env.HOST + ":" + PORT;
+// const HOST = process.env.HOST + ":" + PORT;
+const HOST = process.env.HOST;
 // const HOST = "http://192.168.100.208:5500";
 const SECRET = process.env.JWT_SECRET;
 
