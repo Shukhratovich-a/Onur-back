@@ -54,9 +54,79 @@ values
     1
   ),
   (
-    'Siphons for washbasins and sinks"',
+    'Siphons for washbasins and sinks',
     '1050.png',
     1
+  ),
+  (
+    'Full Bore Brass Ball Valve For Water PN 40',
+    'KAS1.jpg',
+    2
+  ),
+  (
+    'Вентиль бабочка М/М PN 25 ЭКО',
+    'KAS2.jpg',
+    2
+  ),
+  (
+    'Коллектор с краниками для т/п ЭКО',
+    'KAS3.jpg',
+    2
+  ),
+  (
+    'коллектор с расходамерами нержовейка для т/п',
+    'KAS4.jpg',
+    2
+  ),
+  (
+    'PP-R FIBER PIPE PN 25 SDR 6',
+    'SPK1.jpg',
+    3
+  ),
+  (
+    'PP-R FIBER PIPE PN 20 SDR 7,4',
+    'SPK2.jpg',
+    3
+  ),
+  (
+    'PP-R Chrome plated valve',
+    'SPK3.jpg',
+    3
+  ),
+  (
+    'PE-RT Pipe',
+    'SPK4.jpg',
+    3
+  ),
+  (
+    'CM 60 TEST PRESSURE PUMP WITH PLASTIC PISTON',
+    'CANDAN1.jpg',
+    4
+  ),
+  (
+    'AUTOMATIC PIPE CUTTER 16-40mm',
+    'CANDAN2.jpg',
+    4
+  ),
+  (
+    'PIPE CUTTER 16-40mm',
+    'CANDAN3.jpg',
+    4
+  ),
+  (
+    'PLASTIC PIPE WELDING SOCKET',
+    'CANDAN4.jpg',
+    4
+  ),
+  (
+    'Гайка нержавеющий хомутд (Шиной)',
+    'BAYKARA3.jpg',
+    5
+  ),
+  (
+    'ПРИЦЕПНОЙ ДЮБЕЛЬ',
+    'BAYKARA4.jpg',
+    5
   );
 
 insert into
