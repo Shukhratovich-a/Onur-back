@@ -8,4 +8,6 @@ const router = Router();
 router.get("/partners", controller.GET);
 router.get("/partners/:partnerId", controller.GETBYID);
 
+router.post("/partners", controller.POST);
+
 export default router;

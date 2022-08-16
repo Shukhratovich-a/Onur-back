@@ -30,4 +30,16 @@ export default {
     group by
       p.partner_id;
   `,
+
+  POST: `
+    insert into
+      partners (partner_name, partner_site, partner_image)
+    values
+      (
+        $1,
+        $2,
+        $3
+      )
+    returning *;
+  `,
 };

@@ -1,5 +1,7 @@
+import path from "path";
+
 import model from "./partner.model.js";
-import { AuthorizationError, InternalServerError, NotFoundError } from "../../lib/error.js";
+import { InternalServerError, NotFoundError, RequestError } from "../../lib/error.js";
 
 export default {
   GET: async (req, res, next) => {
@@ -24,6 +26,33 @@ export default {
 
       res.status(200).json({
         status: 200,
+        message: "ok",
+        data: partner,
+      });
+    } catch (error) {
+      return next(new InternalServerError(500, error.message));
+    }
+  },
+
+  POST: async (req, res, next) => {
+    try {
+      const { image } = req.files;
+
+      if (!image.mimetype.includes("image") || image.size > 2100000) {
+        return next(new RequestError(400, "invalid format"));
+      }
+
+      const imageName = Date.now() + image.name;
+
+      req.body.partnerImage = imageName;
+
+      let partner = await model.POST(req.body);
+      if (!partner) return next(new RequestError(400, "request filed"));
+
+      image.mv(path.join(process.cwd(), "uploads", imageName));
+
+      res.status(201).json({
+        status: 201,
         message: "ok",
         data: partner,
       });

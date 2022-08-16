@@ -88,4 +88,26 @@ export default {
       console.log(error);
     }
   },
+
+  POST: async ({ partnerName, partnerSite, partnerImage }) => {
+    try {
+      let partner = await fetch(query.POST, partnerName, partnerSite, partnerImage);
+
+      partner.partnerId = partner.partner_id;
+      partner.partnerName = partner.partner_name;
+      partner.partnerSite = partner.partner_site;
+      partner.partnerImage = HOST + "/" + partner.partner_image;
+      partner.createAt = partner.create_at;
+
+      delete partner.partner_id;
+      delete partner.partner_name;
+      delete partner.partner_site;
+      delete partner.partner_image;
+      delete partner.create_at;
+
+      return partner;
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };
