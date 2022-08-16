@@ -18,3 +18,9 @@ where
   and p.partner_id = $1
 group by
   p.partner_id;
+update
+  partners
+set
+  partner_name = coalesce(partner_name, $1),
+  partner_site = coalesce(partner_site, $2),
+  partner_image = coalesce(partner_image, $3) returning *;

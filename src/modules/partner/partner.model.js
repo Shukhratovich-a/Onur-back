@@ -7,6 +7,8 @@ export default {
     try {
       let partners = await fetchAll(query.GET);
 
+      if (partners.length === 0) return [];
+
       partners = partners.map((partner) => {
         partner.partnerId = partner.partner_id;
         partner.partnerName = partner.partner_name;
@@ -32,6 +34,8 @@ export default {
   GETBYID: async ({ partnerId = 0 }) => {
     try {
       let partner = await fetch(query.GETBYID, partnerId);
+
+      if (!partner) return null;
 
       partner.partnerId = partner.partner_id;
       partner.partnerName = partner.partner_name;
@@ -92,6 +96,56 @@ export default {
   POST: async ({ partnerName, partnerSite, partnerImage }) => {
     try {
       let partner = await fetch(query.POST, partnerName, partnerSite, partnerImage);
+
+      if (!partner) return null;
+
+      partner.partnerId = partner.partner_id;
+      partner.partnerName = partner.partner_name;
+      partner.partnerSite = partner.partner_site;
+      partner.partnerImage = HOST + "/" + partner.partner_image;
+      partner.createAt = partner.create_at;
+
+      delete partner.partner_id;
+      delete partner.partner_name;
+      delete partner.partner_site;
+      delete partner.partner_image;
+      delete partner.create_at;
+
+      return partner;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  PUT: async ({ partnerName, partnerSite, partnerImage }, { partnerId }) => {
+    try {
+      let partner = await fetch(query.PUT, partnerId, partnerName, partnerSite, partnerImage);
+
+      if (!partner) return null;
+
+      partner.partnerId = partner.partner_id;
+      partner.partnerName = partner.partner_name;
+      partner.partnerSite = partner.partner_site;
+      partner.partnerImage = HOST + "/" + partner.partner_image;
+      partner.createAt = partner.create_at;
+
+      delete partner.partner_id;
+      delete partner.partner_name;
+      delete partner.partner_site;
+      delete partner.partner_image;
+      delete partner.create_at;
+
+      return partner;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  DELETE: async ({ partnerId }) => {
+    try {
+      let partner = await fetch(query.DELETE, partnerId);
+
+      if (!partner) return null;
 
       partner.partnerId = partner.partner_id;
       partner.partnerName = partner.partner_name;

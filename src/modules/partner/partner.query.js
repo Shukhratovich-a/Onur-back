@@ -5,7 +5,9 @@ export default {
     from
       partners as p
     where
-      p.status = 'active';
+      p.status = 'active'
+    order by
+      p.create_at;
   `,
 
   GETBYID: `
@@ -23,6 +25,8 @@ export default {
           left join product_params as pd on pro.product_id = pd.product_id
         group by
           pro.product_id
+        order by
+          pro.create_at
       ) as pr on pr.partner_id = p.partner_id
     where
       p.status = 'active'
@@ -40,6 +44,28 @@ export default {
         $2,
         $3
       )
+    returning *;
+  `,
+
+  PUT: `
+    update
+      partners
+    set
+      partner_name = coalesce($2, partner_name),
+      partner_site = coalesce($3, partner_site),
+      partner_image = coalesce($4, partner_image) 
+    where
+      partner_id = $1
+    returning *;
+  `,
+
+  DELETE: `
+    update
+      partners
+    set
+      status = 'deleted'
+    where
+      partner_id = $1
     returning *;
   `,
 };
