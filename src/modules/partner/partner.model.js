@@ -1,5 +1,6 @@
 import { HOST, PORT } from "../../config.js";
 import { fetch, fetchAll } from "../../lib/postgres.js";
+
 import query from "./partner.query.js";
 
 export default {

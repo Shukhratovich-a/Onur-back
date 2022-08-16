@@ -13,16 +13,25 @@ export default {
   GETBYID: `
     select
       p. *,
-      json_agg(pr. *) as products
+      json_agg(pr.*) as products
     from
       partners as p
       left join (
         select
-          pro. *,
-          json_agg(pd. *) as product_params
+          pro.*,
+          json_agg(pd.*) as product_params
         from
           products as pro
-          left join product_params as pd on pro.product_id = pd.product_id
+          left join (
+            select
+              *
+            from
+              product_params
+            where
+              status = 'active'
+          ) as pd on pro.product_id = pd.product_id
+        where
+          pro.status = 'active'
         group by
           pro.product_id
         order by

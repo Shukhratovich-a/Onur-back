@@ -1,7 +1,8 @@
 import path from "path";
 
-import model from "./partner.model.js";
 import { InternalServerError, NotFoundError, RequestError } from "../../lib/error.js";
+
+import model from "./partner.model.js";
 
 export default {
   GET: async (req, res, next) => {

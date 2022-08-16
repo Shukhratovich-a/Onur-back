@@ -13,3 +13,4 @@
 /partners/6___InternalServerError___Tue Aug 16 2022 17:07:21 GMT+0500 (Узбекистан, стандартное время)___500___Cannot destructure property 'image' of 'req.files' as it is null.
 /partners/6___InternalServerError___Tue Aug 16 2022 17:08:06 GMT+0500 (Узбекистан, стандартное время)___500___Cannot destructure property 'image' of 'req.files' as it is null.
 /partners/6___InternalServerError___Tue Aug 16 2022 17:08:21 GMT+0500 (Узбекистан, стандартное время)___500___Cannot destructure property 'image' of 'req.files' as it is null.
+/productparams___InternalServerError___Wed Aug 17 2022 02:59:00 GMT+0500 (Узбекистан, стандартное время)___500___next is not defined
