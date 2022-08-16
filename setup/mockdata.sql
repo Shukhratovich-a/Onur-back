@@ -120,12 +120,12 @@ values
   ),
   (
     'Гайка нержавеющий хомутд (Шиной)',
-    'BAYKARA3.jpg',
+    'BAYKARA1.jpg',
     5
   ),
   (
     'ПРИЦЕПНОЙ ДЮБЕЛЬ',
-    'BAYKARA4.jpg',
+    'BAYKARA2.jpg',
     5
   );
 
