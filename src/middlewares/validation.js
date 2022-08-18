@@ -1,6 +1,7 @@
 import {
   loginScheme,
   registerScheme,
+  userPostScheme,
   partnerPostScheme,
   partnerPutScheme,
   productPostScheme,
@@ -19,6 +20,12 @@ export default (req, res, next) => {
 
     if (req.url == "/admins/register") {
       let { error } = registerScheme.validate(req.body);
+      if (error) throw error;
+    }
+
+    // users
+    if (req.url == "/users" && req.method == "POST") {
+      let { error } = userPostScheme.validate(req.body);
       if (error) throw error;
     }
 

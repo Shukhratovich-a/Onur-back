@@ -11,6 +11,13 @@ const registerScheme = Joi.object({
   password: Joi.string().min(8).max(60).required(),
 });
 
+// user
+const userPostScheme = Joi.object({
+  username: Joi.string().min(3).max(64).required(),
+  userContact: Joi.string().min(12).max(12).required(),
+  userMessage: Joi.string().max(250).required(),
+});
+
 // partner
 const partnerPostScheme = Joi.object({
   partnerName: Joi.string().min(1).max(32).required(),
@@ -47,6 +54,7 @@ const productParamPutScheme = Joi.object({
 export {
   loginScheme,
   registerScheme,
+  userPostScheme,
   partnerPostScheme,
   partnerPutScheme,
   productPostScheme,

@@ -10,17 +10,16 @@ create table admins(
   admin_id serial primary key,
   admin_name varchar(32) unique not null,
   admin_password varchar(64) not null,
-  status varchar(16) default 'active' not null,
+  status varchar(16) default 'waiting' not null,
   create_at timestamp default current_timestamp
 );
 
-drop table if exists services;
-create table services(
-  service_id serial primary key,
-  service_name varchar(32) not null,
-  service_description varchar(1024) not null,
-  service_deparment varchar(128) not null,
-  service_image varchar(256) not null,
+drop table if exists users;
+create table users(
+  user_id serial primary key,
+  username varchar(64) not null,
+  user_number varchar(12) not null,
+  user_message varchar(256) not null,
   status varchar(16) default 'active' not null,
   create_at timestamp default current_timestamp
 );

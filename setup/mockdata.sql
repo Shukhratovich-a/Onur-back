@@ -5,7 +5,24 @@ values
     'Abdulaziz',
     crypt('12345678', gen_salt('bf'))
   );
-
+insert into
+  users(username, user_number, user_message)
+values
+  (
+    'Abdulaziz',
+    '998908050447',
+    'hbjnkm fjksbd sdnf sfkj sdfj msdfsj dfsd fmsdfns dfosd sdofj dsfsdn jfdsfsdnj d'
+  ),
+  (
+    'Tohir',
+    '998908050447',
+    'hbjnkm fjksbd sdnf sfkj sdfj msdfsj dfsd fmsdfns dfosd sdofj dsfsdn jfdsfsdnj d'
+  ),
+  (
+    'Javlon',
+    '998908050447',
+    'hbjnkm fjksbd sdnf sfkj sdfj msdfsj dfsd fmsdfns dfosd sdofj dsfsdn jfdsfsdnj d'
+  );
 insert into
   partners (partner_name, partner_site, partner_image)
 values
@@ -34,7 +51,6 @@ values
     'https://baykara.com/',
     'baykara.svg'
   );
-
 insert into
   products (product_name, product_image, partner_id)
 values
@@ -93,11 +109,7 @@ values
     'SPK3.jpg',
     3
   ),
-  (
-    'PE-RT Pipe',
-    'SPK4.jpg',
-    3
-  ),
+  ('PE-RT Pipe', 'SPK4.jpg', 3),
   (
     'CM 60 TEST PRESSURE PUMP WITH PLASTIC PISTON',
     'CANDAN1.jpg',
@@ -128,9 +140,12 @@ values
     'BAYKARA2.jpg',
     5
   );
-
 insert into
-  product_params (product_param_name, product_param_text, product_id)
+  product_params (
+    product_param_name,
+    product_param_text,
+    product_id
+  )
 values
   (
     'description',
@@ -142,26 +157,10 @@ values
     '1145x525x165mm',
     1
   ),
-  (
-    'box volume',
-    '0,010m3',
-    1
-  ),
-  (
-    'box weight',
-    '14,0kg',
-    1
-  ),
-  (
-    'quantity of box',
-    '1',
-    1
-  ),
-  (
-    'manufacturer',
-    'Turkey',
-    1
-  ),
+  ('box volume', '0,010m3', 1),
+  ('box weight', '14,0kg', 1),
+  ('quantity of box', '1', 1),
+  ('manufacturer', 'Turkey', 1),
   (
     'description',
     'Concelead cistern for hang-wall closets with metal frame',
@@ -172,26 +171,10 @@ values
     '1145x525x165mm',
     2
   ),
-  (
-    'box volume',
-    '0,010m3',
-    2
-  ),
-  (
-    'box weight',
-    '14,0kg',
-    2
-  ),
-  (
-    'quantity of box',
-    '1',
-    2
-  ),
-  (
-    'manufacturer',
-    'Turkey',
-    2
-  ),
+  ('box volume', '0,010m3', 2),
+  ('box weight', '14,0kg', 2),
+  ('quantity of box', '1', 2),
+  ('manufacturer', 'Turkey', 2),
   (
     'description',
     'Concelead cistern for hang-wall closets with metal frame',
@@ -202,26 +185,10 @@ values
     '1145x525x165mm',
     3
   ),
-  (
-    'box volume',
-    '0,010m3',
-    3
-  ),
-  (
-    'box weight',
-    '14,0kg',
-    3
-  ),
-  (
-    'quantity of box',
-    '1',
-    3
-  ),
-  (
-    'manufacturer',
-    'Turkey',
-    3
-  ),
+  ('box volume', '0,010m3', 3),
+  ('box weight', '14,0kg', 3),
+  ('quantity of box', '1', 3),
+  ('manufacturer', 'Turkey', 3),
   (
     'description',
     'Concelead cistern for hang-wall closets with metal frame',
@@ -232,23 +199,7 @@ values
     '1145x525x165mm',
     4
   ),
-  (
-    'box volume',
-    '0,010m3',
-    4
-  ),
-  (
-    'box weight',
-    '14,0kg',
-    4
-  ),
-  (
-    'quantity of box',
-    '1',
-    4
-  ),
-  (
-    'manufacturer',
-    'Turkey',
-    4
-  );
+  ('box volume', '0,010m3', 4),
+  ('box weight', '14,0kg', 4),
+  ('quantity of box', '1', 4),
+  ('manufacturer', 'Turkey', 4);

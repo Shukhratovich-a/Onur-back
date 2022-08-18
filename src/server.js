@@ -39,4 +39,4 @@ app.use((error, req, res, next) => {
   process.exit();
 });
 
-app.listen(PORT, () => console.log("server is run: " + HOST + ":" + PORT));
+app.listen(PORT, () => console.log("server is run: " + HOST));
