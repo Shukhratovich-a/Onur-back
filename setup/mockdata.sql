@@ -5,6 +5,7 @@ values
     'Abdulaziz',
     crypt('12345678', gen_salt('bf'))
   );
+  
 insert into
   users(username, user_number, user_message)
 values
@@ -23,6 +24,7 @@ values
     '998908050447',
     'hbjnkm fjksbd sdnf sfkj sdfj msdfsj dfsd fmsdfns dfosd sdofj dsfsdn jfdsfsdnj d'
   );
+  
 insert into
   partners (partner_name, partner_site, partner_image)
 values
@@ -51,6 +53,7 @@ values
     'https://baykara.com/',
     'baykara.svg'
   );
+  
 insert into
   products (product_name, product_image, partner_id)
 values
@@ -140,6 +143,7 @@ values
     'BAYKARA2.jpg',
     5
   );
+  
 insert into
   product_params (
     product_param_name,
