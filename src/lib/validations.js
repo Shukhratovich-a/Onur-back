@@ -15,7 +15,7 @@ const registerScheme = Joi.object({
 const userPostScheme = Joi.object({
   username: Joi.string().min(3).max(64).required(),
   userContact: Joi.string().min(12).max(12).required(),
-  userMessage: Joi.string().max(1020).required(),
+  userMessage: Joi.string().max(1020),
 });
 
 // partner
