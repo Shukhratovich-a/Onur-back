@@ -19,7 +19,7 @@ create table users(
   user_id serial primary key,
   username varchar(64) not null,
   user_number varchar(12) not null,
-  user_message varchar(256) not null,
+  user_message varchar(1024) not null,
   status varchar(16) default 'active' not null,
   create_at timestamp default current_timestamp
 );
