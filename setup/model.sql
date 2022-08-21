@@ -10,7 +10,7 @@ create table admins(
   admin_id serial primary key,
   admin_name varchar(32) unique not null,
   admin_password varchar(64) not null,
-  status varchar(16) default 'waiting' not null,
+  status varchar(16) default 'active' not null,
   create_at timestamp default current_timestamp
 );
 
