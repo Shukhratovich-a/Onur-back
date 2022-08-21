@@ -46,7 +46,7 @@ export default {
 
   LOGIN: async ({ adminName, password }) => {
     try {
-      const admin = await fetch(query.REGISTER, adminName, password);
+      const admin = await fetch(query.LOGIN, adminName, password);
 
       admin.adminId = admin.admin_id;
       admin.adminName = admin.admin_name;
