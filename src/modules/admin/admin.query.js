@@ -19,7 +19,7 @@ export default {
       admins (admin_name, admin_password)
     values
       (
-        $1,
+        lower($1),
         crypt($2, gen_salt('bf'))
       )
     returning

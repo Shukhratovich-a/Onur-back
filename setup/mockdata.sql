@@ -2,7 +2,7 @@ insert into
   admins (admin_name, admin_password)
 values
   (
-    'Abdulaziz',
+    'abdulaziz',
     crypt('12345678', gen_salt('bf'))
   );
   
