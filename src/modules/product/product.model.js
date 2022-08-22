@@ -78,11 +78,13 @@ export default {
 
       if (!product) return null;
 
+      product.partnerId = product.partner_id;
       product.productId = product.product_id;
       product.productName = product.product_name;
       product.productImage = HOST + "/" + product.product_image;
       product.createAt = product.create_at;
 
+      delete product.partner_id;
       delete product.product_id;
       delete product.product_name;
       delete product.product_image;
@@ -100,11 +102,13 @@ export default {
 
       if (!product) return null;
 
+      product.partnerId = product.partner_id;
       product.productId = product.product_id;
       product.productName = product.product_name;
       product.productImage = HOST + "/" + product.product_image;
       product.createAt = product.create_at;
 
+      delete product.partner_id;
       delete product.product_id;
       delete product.product_name;
       delete product.product_image;
