@@ -11,6 +11,14 @@ export default {
     returning *;
   `,
 
+  DELETEFORPUT: `
+    delete from
+      product_params
+    where
+      product_id = $1
+    returning *;
+  `,
+
   PUT: `
     update
       product_params

@@ -11,6 +11,10 @@ export default {
       const productParams = [];
       let product = {};
 
+      const deleted = await fetchAll(query.DELETEFORPUT, productId);
+
+      if (!deleted) return null;
+
       if (params.length != 0) {
         for (let param of params) {
           const { error } = productParamPostScheme.validate(param);
