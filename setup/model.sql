@@ -48,7 +48,7 @@ drop table if exists product_params;
 create table product_params(
   product_param_id serial primary key,
   product_param_name varchar(128) not null,
-  product_param_text varchar(256) not null,
+  product_param_text varchar(512) not null,
   product_id int references products(product_id),
   status varchar(16) default 'active' not null,
   create_at timestamp default current_timestamp
