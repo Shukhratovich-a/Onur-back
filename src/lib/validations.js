@@ -43,7 +43,7 @@ const productPutScheme = Joi.object({
 // productParam
 const productParamPostScheme = Joi.object({
   productParamName: Joi.string().min(1).max(125).required(),
-  productParamText: Joi.string().min(1).max(250).required(),
+  productParamText: Joi.string().min(1).max(510).required(),
 });
 
 const productParamPutScheme = Joi.object({
