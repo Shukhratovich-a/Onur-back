@@ -48,7 +48,7 @@ export default {
 
   PUT: async ({ userId }, { status }) => {
     try {
-      let user = await fetchAll(query.PUT, userId, status);
+      let user = await fetch(query.PUT, userId, status);
 
       user.userId = user.user_id;
       user.userNumber = user.user_number;
