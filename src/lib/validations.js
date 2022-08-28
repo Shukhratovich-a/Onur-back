@@ -33,6 +33,7 @@ const partnerPostScheme = Joi.object({
 });
 
 const partnerPutScheme = Joi.object({
+  serviceId: Joi.number(),
   partnerName: Joi.string().min(1).max(32),
   partnerSite: Joi.string().uri().min(6).max(60),
 });

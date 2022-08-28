@@ -41,7 +41,7 @@ create table service_bodys(
   service_name varchar(32) not null,
   service_description varchar(4096) not null,
   service_lang lang default('ru') not null,
-  service_id int references services(service_id),
+  service_id int references services(service_id) not null,
   status varchar(16) default 'active' not null,
   create_at timestamp default current_timestamp
 );
@@ -52,7 +52,7 @@ create table partners(
   partner_name varchar(32) not null,
   partner_site varchar(64) not null,
   partner_image varchar(256) not null,
-  service_id int references services(service_id),
+  service_id int references services(service_id) not null,
   status varchar(16) default 'active' not null,
   create_at timestamp default current_timestamp
 );
@@ -62,7 +62,7 @@ create table products(
   product_id serial primary key,
   product_name varchar(256) not null,
   product_image varchar(256) not null,
-  partner_id int references partners(partner_id),
+  partner_id int references partners(partner_id) not null,
   status varchar(16) default 'active' not null,
   create_at timestamp default current_timestamp
 );
@@ -72,7 +72,7 @@ create table product_params(
   product_param_id serial primary key,
   product_param_name varchar(128) not null,
   product_param_text varchar(512) not null,
-  product_id int references products(product_id),
+  product_id int references products(product_id) not null,
   status varchar(16) default 'active' not null,
   create_at timestamp default current_timestamp
 );

@@ -46,12 +46,13 @@ export default {
 
   POST: `
     insert into
-      partners (partner_name, partner_site, partner_image)
+      partners (partner_name, partner_site, partner_image, service_id)
     values
       (
         $1,
         $2,
-        $3
+        $3,
+        $4
       )
     returning *;
   `,
@@ -62,7 +63,8 @@ export default {
     set
       partner_name = coalesce($2, partner_name),
       partner_site = coalesce($3, partner_site),
-      partner_image = coalesce($4, partner_image) 
+      partner_image = coalesce($4, partner_image),
+      service_id = coalesce($5, service_id) 
     where
       partner_id = $1
     returning *;

@@ -41,12 +41,14 @@ export default {
       if (!partner) return null;
 
       partner.partnerId = partner.partner_id;
+      partner.serviceId = partner.service_id;
       partner.partnerName = partner.partner_name;
       partner.partnerSite = partner.partner_site;
       partner.createAt = partner.create_at;
       partner.partnerImage = HOST + "/" + partner.partner_image;
 
       delete partner.partner_id;
+      delete partner.service_id;
       delete partner.partner_name;
       delete partner.partner_site;
       delete partner.partner_image;
@@ -96,19 +98,21 @@ export default {
     }
   },
 
-  POST: async ({ partnerName, partnerSite, partnerImage }) => {
+  POST: async ({ partnerName, partnerSite, partnerImage, serviceId }) => {
     try {
-      let partner = await fetch(query.POST, partnerName, partnerSite, partnerImage);
+      let partner = await fetch(query.POST, partnerName, partnerSite, partnerImage, serviceId);
 
       if (!partner) return null;
 
       partner.partnerId = partner.partner_id;
+      partner.serviceId = partner.service_id;
       partner.partnerName = partner.partner_name;
       partner.partnerSite = partner.partner_site;
       partner.partnerImage = HOST + "/" + partner.partner_image;
       partner.createAt = partner.create_at;
 
       delete partner.partner_id;
+      delete partner.service_id;
       delete partner.partner_name;
       delete partner.partner_site;
       delete partner.partner_image;
@@ -120,19 +124,28 @@ export default {
     }
   },
 
-  PUT: async ({ partnerName, partnerSite, partnerImage }, { partnerId }) => {
+  PUT: async ({ partnerName, partnerSite, partnerImage, serviceId }, { partnerId }) => {
     try {
-      let partner = await fetch(query.PUT, partnerId, partnerName, partnerSite, partnerImage);
+      let partner = await fetch(
+        query.PUT,
+        partnerId,
+        partnerName,
+        partnerSite,
+        partnerImage,
+        serviceId
+      );
 
       if (!partner) return null;
 
       partner.partnerId = partner.partner_id;
+      partner.serviceId = partner.service_id;
       partner.partnerName = partner.partner_name;
       partner.partnerSite = partner.partner_site;
       partner.partnerImage = HOST + "/" + partner.partner_image;
       partner.createAt = partner.create_at;
 
       delete partner.partner_id;
+      delete partner.service_id;
       delete partner.partner_name;
       delete partner.partner_site;
       delete partner.partner_image;

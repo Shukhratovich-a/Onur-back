@@ -10,7 +10,14 @@ export default {
     left join
       service_bodys as b on s.service_id = b.service_id
     left join
-      partners as p on s.service_id = p.service_id
+      (
+        select
+          *
+        from
+          partners
+        where
+          status = 'active'
+      ) as p on s.service_id = p.service_id
     where
       s.status = 'active' and b.service_lang = $2 and
       case
