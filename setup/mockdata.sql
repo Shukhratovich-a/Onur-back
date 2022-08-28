@@ -12,7 +12,7 @@ values
   ('it', 'It.webp'),
   ('logistic', 'Logistic.webp'),
   ('plumbing', 'Plumbing.webp'),
-  ('accouting', 'Accouting.webp'),
+  ('accounting', 'Accounting.webp'),
   ('distribution', 'Distribution.webp');
 
 insert into
@@ -78,7 +78,7 @@ values
     3
   ),
   (
-    'Accouting',
+    'Accounting',
     'We aimed to open this department in order to facilitate the work of khujjar, which is the main problem of small and medium-sized entrepreneurs. Soon this department will also start its activities',
     'en',
     4

@@ -30,7 +30,7 @@ drop table if exists services;
 create table services(
   service_id serial primary key,
   service_image varchar(256) not null,
-  service_slug varchar(64) not null,
+  service_slug varchar(64) unique not null,
   status varchar(16) default 'active' not null,
   create_at timestamp default current_timestamp
 );

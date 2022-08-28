@@ -11,12 +11,14 @@ export default {
       if (partners.length === 0) return [];
 
       partners = partners.map((partner) => {
+        partner.serviceId = partner.service_id;
         partner.partnerId = partner.partner_id;
         partner.partnerName = partner.partner_name;
         partner.partnerSite = partner.partner_site;
         partner.createAt = partner.create_at;
         partner.partnerImage = HOST + "/" + partner.partner_image;
 
+        delete partner.service_id;
         delete partner.partner_id;
         delete partner.partner_name;
         delete partner.partner_site;

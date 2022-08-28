@@ -2,6 +2,7 @@ import {
   loginScheme,
   registerScheme,
   userPostScheme,
+  servicePutScheme,
   partnerPostScheme,
   partnerPutScheme,
   productPostScheme,
@@ -26,6 +27,12 @@ export default (req, res, next) => {
     // users
     if (req.url == "/users" && req.method == "POST") {
       let { error } = userPostScheme.validate(req.body);
+      if (error) throw error;
+    }
+
+    // services
+    if (req.url == "/services/" + req.params.serviceId && req.method == "PUT") {
+      let { error } = servicePutScheme.validate(req.body);
       if (error) throw error;
     }
 

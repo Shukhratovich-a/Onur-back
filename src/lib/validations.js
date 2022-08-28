@@ -18,6 +18,14 @@ const userPostScheme = Joi.object({
   userMessage: Joi.string().max(1020),
 });
 
+// service
+const servicePutScheme = Joi.object({
+  serviceLang: Joi.string().min(1).max(10).required(),
+  serviceName: Joi.string().min(2).max(32),
+  serviceDescription: Joi.string().min(6).max(4090),
+  image: Joi.any(),
+});
+
 // partner
 const partnerPostScheme = Joi.object({
   partnerName: Joi.string().min(1).max(32).required(),
@@ -55,6 +63,7 @@ export {
   loginScheme,
   registerScheme,
   userPostScheme,
+  servicePutScheme,
   partnerPostScheme,
   partnerPutScheme,
   productPostScheme,
