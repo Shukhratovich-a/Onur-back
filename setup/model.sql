@@ -5,6 +5,8 @@ create database onur;
 
 create extension pgcrypto;
 
+create type lang as enum('ru', 'uz', 'en');
+
 drop table if exists admins;
 create table admins(
   admin_id serial primary key,
@@ -24,12 +26,33 @@ create table users(
   create_at timestamp default current_timestamp
 );
 
+drop table if exists services;
+create table services(
+  service_id serial primary key,
+  service_image varchar(256) not null,
+  service_slug varchar(64) not null,
+  status varchar(16) default 'active' not null,
+  create_at timestamp default current_timestamp
+);
+
+drop table if exists service_bodys;
+create table service_bodys(
+  service_body_id serial primary key,
+  service_name varchar(32) not null,
+  service_description varchar(4096) not null,
+  service_lang lang default('ru') not null,
+  service_id int references services(service_id),
+  status varchar(16) default 'active' not null,
+  create_at timestamp default current_timestamp
+);
+
 drop table if exists partners;
 create table partners(
   partner_id serial primary key,
   partner_name varchar(32) not null,
   partner_site varchar(64) not null,
   partner_image varchar(256) not null,
+  service_id int references services(service_id),
   status varchar(16) default 'active' not null,
   create_at timestamp default current_timestamp
 );
@@ -53,3 +76,24 @@ create table product_params(
   status varchar(16) default 'active' not null,
   create_at timestamp default current_timestamp
 );
+
+drop table if exists news;
+create table news(
+  news_id serial primary key,
+  news_title varchar(512) not null,
+  news_desctiption varchar(4096) not null,
+  news_image varchar(256) not null,
+  service_id int references services(service_id),
+  status varchar(16) default 'active' not null,
+  create_at timestamp default current_timestamp
+);
+
+drop table if exists about;
+create table about(
+  about_id serial primary key,
+  about_desctiption varchar(4096) not null,
+  about_lang varchar(16) default('ru') unique not null,
+  status varchar(16) default 'active' not null,
+  create_at timestamp default current_timestamp
+);
+

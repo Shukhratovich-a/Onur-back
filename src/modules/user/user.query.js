@@ -9,7 +9,9 @@ export default {
       when $1 = 0 then u.status = $2
       when $1 > 0 then u.user_id = $1
       else true
-    end;
+    end
+    order by
+      u.create_at desc;
   `,
 
   POST: `
