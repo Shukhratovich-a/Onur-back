@@ -43,7 +43,7 @@ export default {
       news.newsId = news.news_id;
       news.newsTitle = news.news_title;
       news.newsDesctiption = news.news_desctiption;
-      news.newsImage = news.news_image;
+      news.newsImage = HOST + "/" + news.news_image;
       news.serviceId = news.service_id;
       news.createAt = news.create_at;
 
@@ -69,7 +69,7 @@ export default {
       news.newsId = news.news_id;
       news.newsTitle = news.news_title;
       news.newsDesctiption = news.news_desctiption;
-      news.newsImage = news.news_image;
+      news.newsImage = HOST + "/" + news.news_image;
       news.serviceId = news.service_id;
       news.createAt = news.create_at;
 
@@ -95,7 +95,7 @@ export default {
       news.newsId = news.news_id;
       news.newsTitle = news.news_title;
       news.newsDesctiption = news.news_desctiption;
-      news.newsImage = news.news_image;
+      news.newsImage = HOST + "/" + news.news_image;
       news.serviceId = news.service_id;
       news.createAt = news.create_at;
 
