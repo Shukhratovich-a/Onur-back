@@ -14,7 +14,7 @@ export default {
         item.newsId = item.news_id;
         item.newsTitle = item.news_title;
         item.newsDesctiption = item.news_desctiption;
-        item.newsImage = item.news_image;
+        item.newsImage = HOST + "/" + item.news_image;
         item.serviceId = item.service_id;
         item.createAt = item.create_at;
 
