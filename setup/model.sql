@@ -81,7 +81,7 @@ drop table if exists news;
 create table news(
   news_id serial primary key,
   news_title varchar(512) not null,
-  news_desctiption varchar(4096) not null,
+  news_description varchar(4096) not null,
   news_image varchar(256) not null,
   service_id int references services(service_id),
   status varchar(16) default 'active' not null,
@@ -91,7 +91,7 @@ create table news(
 drop table if exists about;
 create table about(
   about_id serial primary key,
-  about_desctiption varchar(4096) not null,
+  about_description varchar(4096) not null,
   about_lang varchar(16) default('ru') unique not null,
   status varchar(16) default 'active' not null,
   create_at timestamp default current_timestamp

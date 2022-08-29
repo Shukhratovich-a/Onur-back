@@ -15,7 +15,7 @@ export default {
 
   POST: `
     insert into
-      news (news_title, news_desctiption, news_image, service_id)
+      news (news_title, news_description, news_image, service_id)
     values
       (
         $1,
@@ -31,7 +31,7 @@ export default {
       news
     set
       news_title = coalesce($2, news_title),
-      news_desctiption = coalesce($3, news_desctiption),
+      news_description = coalesce($3, news_description),
       news_image = coalesce($4, news_image),
       service_id = coalesce($5, service_id)
     where

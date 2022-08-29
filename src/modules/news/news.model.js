@@ -5,28 +5,50 @@ import query from "./news.query.js";
 
 export default {
   GET: async ({ newsId = 0, serviceId = 0 }) => {
+    let news;
+
     try {
-      let news = await fetchAll(query.GET, newsId, serviceId);
+      if (newsId > 0) {
+        news = await fetch(query.GET, newsId, serviceId);
 
-      if (!news || news.length === 0) return [];
+        if (!news || news.length === 0) return [];
 
-      news = news.map((item) => {
-        item.newsId = item.news_id;
-        item.newsTitle = item.news_title;
-        item.newsDesctiption = item.news_desctiption;
-        item.newsImage = HOST + "/" + item.news_image;
-        item.serviceId = item.service_id;
-        item.createAt = item.create_at;
+        news.newsId = news.news_id;
+        news.newsTitle = news.news_title;
+        news.newsDescription = news.news_description;
+        news.newsImage = HOST + "/" + news.news_image;
+        news.serviceId = news.service_id;
+        news.createAt = news.create_at;
 
-        delete item.news_id;
-        delete item.news_title;
-        delete item.news_desctiption;
-        delete item.news_image;
-        delete item.service_id;
-        delete item.create_at;
+        delete news.news_id;
+        delete news.news_title;
+        delete news.news_description;
+        delete news.news_image;
+        delete news.service_id;
+        delete news.create_at;
+      } else {
+        news = await fetchAll(query.GET, newsId, serviceId);
 
-        return item;
-      });
+        if (!news || news.length === 0) return [];
+
+        news = news.map((item) => {
+          item.newsId = item.news_id;
+          item.newsTitle = item.news_title;
+          item.newsDescription = item.news_description;
+          item.newsImage = HOST + "/" + item.news_image;
+          item.serviceId = item.service_id;
+          item.createAt = item.create_at;
+
+          delete item.news_id;
+          delete item.news_title;
+          delete item.news_description;
+          delete item.news_image;
+          delete item.service_id;
+          delete item.create_at;
+
+          return item;
+        });
+      }
 
       return news;
     } catch (error) {
@@ -42,14 +64,14 @@ export default {
 
       news.newsId = news.news_id;
       news.newsTitle = news.news_title;
-      news.newsDesctiption = news.news_desctiption;
+      news.newsDescription = news.news_description;
       news.newsImage = HOST + "/" + news.news_image;
       news.serviceId = news.service_id;
       news.createAt = news.create_at;
 
       delete news.news_id;
       delete news.news_title;
-      delete news.news_desctiption;
+      delete news.news_description;
       delete news.news_image;
       delete news.service_id;
       delete news.create_at;
@@ -68,14 +90,14 @@ export default {
 
       news.newsId = news.news_id;
       news.newsTitle = news.news_title;
-      news.newsDesctiption = news.news_desctiption;
+      news.newsDescription = news.news_description;
       news.newsImage = HOST + "/" + news.news_image;
       news.serviceId = news.service_id;
       news.createAt = news.create_at;
 
       delete news.news_id;
       delete news.news_title;
-      delete news.news_desctiption;
+      delete news.news_description;
       delete news.news_image;
       delete news.service_id;
       delete news.create_at;
@@ -94,14 +116,14 @@ export default {
 
       news.newsId = news.news_id;
       news.newsTitle = news.news_title;
-      news.newsDesctiption = news.news_desctiption;
+      news.newsDescription = news.news_description;
       news.newsImage = HOST + "/" + news.news_image;
       news.serviceId = news.service_id;
       news.createAt = news.create_at;
 
       delete news.news_id;
       delete news.news_title;
-      delete news.news_desctiption;
+      delete news.news_description;
       delete news.news_image;
       delete news.service_id;
       delete news.create_at;

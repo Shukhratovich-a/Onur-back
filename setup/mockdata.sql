@@ -308,7 +308,7 @@ values
   ('manufacturer', 'Turkey', 4);
 
 insert into
-  about(about_desctiption, about_lang)
+  about(about_description, about_lang)
 values
   (
     'This company was founded in 2004, and started with the import of household appliances from the United Arab Emirates.
