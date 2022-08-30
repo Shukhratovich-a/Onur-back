@@ -12,7 +12,7 @@ export default {
     update 
       about
     set
-      about_desctiption = $2
+      about_description = $2
     where
       about_lang = $1
     returning *;
