@@ -7,7 +7,7 @@ export default {
       let about = await fetch(query.GET, lang);
 
       about.aboutId = about.about_id;
-      about.aboutDesctiption = about.about_description;
+      about.aboutDescription = about.about_description;
       about.aboutLang = about.about_lang;
       about.createAt = about.create_at;
 
@@ -27,7 +27,7 @@ export default {
       let about = await fetch(query.PUT, lang, aboutDescription);
 
       about.aboutId = about.about_id;
-      about.aboutDesctiption = about.about_description;
+      about.aboutDescription = about.about_description;
       about.aboutLang = about.about_lang;
       about.createAt = about.create_at;
 
