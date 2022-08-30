@@ -7,12 +7,12 @@ export default {
       let about = await fetch(query.GET, lang);
 
       about.aboutId = about.about_id;
-      about.aboutDesctiption = about.about_desctiption;
+      about.aboutDesctiption = about.about_description;
       about.aboutLang = about.about_lang;
       about.createAt = about.create_at;
 
       delete about.about_id;
-      delete about.about_desctiption;
+      delete about.about_description;
       delete about.about_lang;
       delete about.create_at;
 
@@ -27,12 +27,12 @@ export default {
       let about = await fetch(query.PUT, lang, aboutDescription);
 
       about.aboutId = about.about_id;
-      about.aboutDesctiption = about.about_desctiption;
+      about.aboutDesctiption = about.about_description;
       about.aboutLang = about.about_lang;
       about.createAt = about.create_at;
 
       delete about.about_id;
-      delete about.about_desctiption;
+      delete about.about_description;
       delete about.about_lang;
       delete about.create_at;
 
