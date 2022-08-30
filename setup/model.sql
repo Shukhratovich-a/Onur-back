@@ -5,6 +5,7 @@ create database onur;
 
 create extension pgcrypto;
 
+drop type if exists lang;
 create type lang as enum('ru', 'uz', 'en');
 
 drop table if exists admins;
