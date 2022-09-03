@@ -6,7 +6,6 @@ import model from "./partner.model.js";
 
 export default {
   GET: async (req, res, next) => {
-    console.log(req.headers.host);
     try {
       let partners = await model.GET();
       if (partners.length === 0) return next(new NotFoundError(404, "client Error"));
