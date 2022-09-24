@@ -2,8 +2,8 @@ insert into
   admins (admin_name, admin_password)
 values
   (
-    'abdulaziz',
-    crypt('12345678', gen_salt('bf'))
+    'onuradmin',
+    crypt('onur2022site', gen_salt('bf'))
   );
 
 insert into
